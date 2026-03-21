@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #0F0;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 20, 0, 0.95);
+            border-bottom: 2px solid #0F0;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #0F0;
+            letter-spacing: 3px;
+        }
+
+        nav a {
+            color: #0F0;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            text-shadow: 0 0 10px #0F0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-banner {
+            background: rgba(0, 20, 0, 0.85);
+            border: 2px solid #0F0;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            text-align: center;
+        }
+
+        .welcome-banner h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #0F0;
+        }
+
+        .welcome-banner p {
+            opacity: 0.7;
+            font-size: 16px;
+        }
+
+        .blog-posts {
+            display: grid;
+            gap: 30px;
+        }
+
+        .post-card {
+            background: rgba(0, 20, 0, 0.85);
+            border: 1px solid #0F0;
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .post-card:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .post-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px #0F0;
+        }
+
+        .post-meta {
+            color: rgba(0, 255, 0, 0.5);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .post-excerpt {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: #0F0;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            text-shadow: 0 0 10px #0F0;
+        }
+
+        .sidebar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 20, 0, 0.95);
+            border: 1px solid #0F0;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px #0F0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: #0F0;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .sidebar a:hover {
+            text-shadow: 0 0 10px #0F0;
+        }
+
+        .user-info {
+            background: rgba(0, 30, 0, 0.9);
+            border: 1px solid #0F0;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .logout-btn {
+            background: linear-gradient(135deg, #0a3d0a, #0f5f0f);
+            border: 1px solid #0F0;
+            color: #0F0;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            transition: all 0.3s;
+        }
+
+        .logout-btn:hover {
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+
+        .main-content {
+            margin-right: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">MATRIX BLOG</div>
+            <nav>
+                <a href="/">首页</a>
+                <a href="/blog">博客</a>
+                <a href="/admin">管理</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="welcome-banner">
+                <h1>欢迎来到矩阵博客</h1>
+                <p>探索数字世界的无限可能</p>
+            </div>
+
+            <div class="blog-posts">
+                <div class="post-card">
+                    <h2 class="post-title">欢迎来到矩阵世界</h2>
+                    <div class="post-meta">发布于 2026-03-21 | 作者：Matrix</div>
+                    <p class="post-excerpt">
+                        这是你的第一篇博客文章。在这里，你可以分享想法、记录生活、探讨技术。
+                        让我们一起在数字世界中探索和创造...
+                    </p>
+                    <a href="#" class="read-more">阅读更多 →</a>
+                </div>
+
+                <div class="post-card">
+                    <h2 class="post-title">黑客帝国数字雨效果实现</h2>
+                    <div class="post-meta">发布于 2026-03-21 | 作者：Matrix</div>
+                    <p class="post-excerpt">
+                        使用HTML5 Canvas实现经典的黑客帝国数字雨效果，支持中英日文及数字混合显示，
+                        营造出独特的科技感氛围...
+                    </p>
+                    <a href="#" class="read-more">阅读更多 →</a>
+                </div>
+
+                <div class="post-card">
+                    <h2 class="post-title">Web开发技术探索</h2>
+                    <div class="post-meta">发布于 2026-03-21 | 作者：Matrix</div>
+                    <p class="post-excerpt">
+                        探索现代Web开发技术，包括前端框架、后端服务、数据库设计等，
+                        构建完整的全栈应用...
+                    </p>
+                    <a href="#" class="read-more">阅读更多 →</a>
+                </div>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="user-info">
+                <h3>当前用户</h3>
+                <p id="currentUser">未登录</p>
+                <br>
+                <button class="logout-btn" onclick="logout()">退出登录</button>
+            </div>
+
+            <h3>最新文章</h3>
+            <ul>
+                <li><a href="#">欢迎来到矩阵世界</a></li>
+                <li><a href="#">黑客帝国数字雨效果</a></li>
+                <li><a href="#">Web开发技术探索</a></li>
+            </ul>
+
+            <br>
+            <h3>分类</h3>
+            <ul>
+                <li><a href="#">技术分享</a></li>
+                <li><a href="#">生活记录</a></li>
+                <li><a href="#">项目展示</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <script>
+        // Check login status
+        function checkLogin() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const username = localStorage.getItem('username');
+
+            if (!isLoggedIn || !username) {
+                window.location.href = '/login';
+                return false;
+            }
+
+            document.getElementById('currentUser').textContent = username;
+            return true;
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('username');
+            window.location.href = '/login';
+        }
+
+        // Initialize
+        checkLogin();
+    </script>
+</body>
+</html>
